@@ -1,22 +1,11 @@
-# A simple Typescript quickstart
+# ts-framestream
 
-A simple Typescript quickstart using:
+*Warning: work in progress. Full implementation and unit tests coming soon.*
 
-- Rollup for builds
-- Jest for testing and coverage
-- Nodemon for hot reloading
-- ESLint for syntax rules
-- Prettier for formatting
+A lightweight, pure-TypeScript implementation of the [Frame Stream protocol](https://github.com/farsightsec/fstrm).
 
-## Usage
+Other Node.js implementations of the protocol seem to have stopped short of providing full implementations of the handshaking and implementation-specific aspects of the Frame Stream protocol, necessary in building applications compatible with standards such as Dnstap.
 
-Clone the repo as a quickstart with
+## Acknowledgements
 
-`git clone https://github.com/jafayer/ts-starter.git <your-project-name>`
-
-Then run the fresh start script to configure the package.json with your project's
-name and description.
-
-`node start`
-
-All other scripts are in the package.json!
+This implementation was heavily inspired by [golang-framestream](https://github.com/farsightsec/golang-framestream/) and [go-framestream](https://github.com/dmachard/go-framestream).
