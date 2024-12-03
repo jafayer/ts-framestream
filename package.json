@@ -1,7 +1,7 @@
 {
-  "name": "ts-starter",
+  "name": "framestream",
   "version": "1.0.0",
-  "description": "There are many like it, but this one is mine.",
+  "description": "A pure-TypeScript implementation of the Frame Stream protocol",
   "main": "index.js",
   "scripts": {
     "build": "tsc -b -v",
@@ -35,14 +35,12 @@
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "prettier": "^3.2.5",
-    "rollup": "^2.79.1",
+    "sinon": "^19.0.2",
     "ts-jest": "^29.1.2",
     "tslib": "^2.6.2",
     "tsx": "^4.10.5",
     "typedoc": "^0.25.13",
-    "typescript": "^5.4.5"
-  },
-  "dependencies": {
-    "typescript-eslint": "^8.8.0"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^8.17.0"
   }
 }
