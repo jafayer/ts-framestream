@@ -88,7 +88,7 @@ export class Encoder {
    * Zero or one CONTENT_TYPE fields may appear in START control frames.
    * No CONTENT_TYPE fields may appear in STOP or FINISH control frames.
    */
-  async sendControlFrame(socket: net.Socket, type: ControlFrameType, contentTypes?: string[]): Promise<void> {
+  async writeControlFrame(socket: net.Socket, type: ControlFrameType, contentTypes?: string[]): Promise<void> {
     // Check if the content type is valid
     if (contentTypes && (type === ControlFrameType.STOP || type === ControlFrameType.FINISH)) {
       throw new Error('CONTENT_TYPE field may not appear in STOP or FINISH control frames');
@@ -142,7 +142,7 @@ export class Encoder {
    * @param socket
    * @param frame
    */
-  async sendFrame(socket: net.Socket, frame: Uint8Array) {
+  async writeFrame(socket: net.Socket, frame: Uint8Array) {
     // Send the frame length
     const lengthBuffer = Buffer.alloc(4);
     lengthBuffer.writeUInt32BE(frame.length, 0);
@@ -169,7 +169,7 @@ export class Decoder {
    */
   async detectFrameType(buffer: Buffer): Promise<FrameType> {
     return new Promise((resolve, reject) => {
-      if (buffer.slice(0, 4).equals(ESCAPE_SEQUENCE)) {
+      if (buffer.subarray(0, 4).equals(ESCAPE_SEQUENCE)) {
         resolve(FrameType.CONTROL);
       } else {
         resolve(FrameType.DATA);
