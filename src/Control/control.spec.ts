@@ -95,29 +95,29 @@ describe('Control', () => {
     describe('checkContentTypes', () => {
         it('should return true if content type is present', () => {
             const control = new Control(['application/json']);
-            expect(control.checkContentTypes('application/json')).toBe(true);
+            expect(control.checkContentTypes(['application/json'])).toBe(true);
         });
 
         it('should return false if content type is not present', () => {
             const control = new Control(['application/json']);
-            expect(control.checkContentTypes('text/plain')).toBe(false);
+            expect(control.checkContentTypes(['text/plain'])).toBe(false);
         });
 
         it('should return false if content types are not defined', () => {
             const control = new Control();
-            expect(control.checkContentTypes('application/json')).toBe(false);
+            expect(control.checkContentTypes(['application/json'])).toBe(false);
         });
     });
 
     describe('constructor', () => {
         it('should create an instance with content types', () => {
             const control = new Control(['application/json']);
-            expect(control.checkContentTypes('application/json')).toBe(true);
+            expect(control.checkContentTypes(['application/json'])).toBe(true);
         });
 
         it('should create an instance without content types', () => {
             const control = new Control();
-            expect(control.checkContentTypes('application/json')).toBe(false);
+            expect(control.checkContentTypes(['application/json'])).toBe(false);
         });
     });
 });

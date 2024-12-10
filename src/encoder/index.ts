@@ -1,4 +1,5 @@
-import { ControlFrameType, ESCAPE_SEQUENCE, FrameType, ControlFieldType } from '../constants';
+import { ControlFrameType, ESCAPE_SEQUENCE, ControlFieldType } from '../Control';
+import { FrameType } from '../constants';
 import net from 'net';
 
 /**

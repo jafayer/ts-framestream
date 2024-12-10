@@ -156,12 +156,13 @@ export class Control {
         };
     }
 
-    checkContentTypes(contentType: string[]): boolean {
-        if(!this.contentTypes) {
+    checkContentTypes(contentTypes: string[]): boolean {
+        const currentContentTypes = this.contentTypes;
+        if(!currentContentTypes) {
             return false;
         }
 
-        return this.contentTypes.some((ct) => contentType.includes(ct));
+        return contentTypes.some((contentType) => currentContentTypes.includes(contentType));
     }
 
 
